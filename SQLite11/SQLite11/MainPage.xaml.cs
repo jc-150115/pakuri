@@ -52,7 +52,7 @@ namespace SQLite11
             var Insert = new Button
             {
                 WidthRequest = 60,
-                Text = "Insert!",
+                Text = "保存",
                 TextColor = Color.Red,
             };
             insertEntry = new Entry
