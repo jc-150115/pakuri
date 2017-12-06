@@ -64,14 +64,14 @@ namespace SQLite11
             layout.Children.Add(insertEntry);
             
             //--------------------------------selectします------------------------------
-            var Select = new Button
+            /*var Select = new Button
             {
                 WidthRequest = 60,
                 Text = "Select!",
                 TextColor = Color.Red,
             };
             layout.Children.Add(Select);
-            Select.Clicked += SelectClicked;
+            Select.Clicked += SelectClicked;*/
 
             Content = layout;
         }
@@ -100,14 +100,14 @@ namespace SQLite11
                 layout.Children.Add(new Label { Text = user.Name });
             }
             //selectする
-            var Select = new Button
+           /* var Select = new Button
             {
                 WidthRequest = 60,
                 Text = "Select!",
                 TextColor = Color.Red,
             };
             layout.Children.Add(Select);
-            Select.Clicked += SelectClicked;
+            Select.Clicked += SelectClicked;*/
             //insertする
             var Insert = new Button
             {
