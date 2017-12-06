@@ -62,25 +62,7 @@ namespace SQLite11
             layout.Children.Add(Insert);
             Insert.Clicked += InsertClicked;
             layout.Children.Add(insertEntry);
-
-            //--------------------------------deleteします------------------------------
-            var Delete = new Button
-            {
-                WidthRequest = 60,
-                Text = "Delete!",
-                TextColor = Color.Red,
-            };
-            layout.Children.Add(Delete);
-            Delete.Clicked += DeleteClicked;
-            /*
-            deleteEntry = new Entry
-            {
-                WidthRequest = 60,
-            };
-            layout.Children.Add(deleteEntry);
-            deleteId = int.Parse(deleteEntry.Text);
-            */
-
+            
             //--------------------------------selectします------------------------------
             var Select = new Button
             {
@@ -102,14 +84,6 @@ namespace SQLite11
             var InsertName = insertEntry.Text;
             //Userテーブルに適当なデータを追加する
             UserModel.insertUser(InsertName);
-
-        }
-
-        //deleteイベントハンドラ
-        void DeleteClicked(object sender, EventArgs e)
-        {
-            //UserModel.deleteUser(deleteId);
-            UserModel.deleteUser(1);
 
         }
 
