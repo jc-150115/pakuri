@@ -85,10 +85,37 @@ namespace SQLite11
             //Userテーブルに適当なデータを追加する
             UserModel.insertUser(InsertName);
 
+       
+
+                //Userテーブルの行データを取得
+                var query = UserModel.selectUser(); //中身はSELECT * FROM [User]
+                var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
+                foreach (var user in query)
+                {
+                    //Userテーブルの名前列をLabelに書き出す
+                    layout.Children.Add(new Label { Text = user.Name });
+                }
+
+            var Insert = new Button
+            {
+                WidthRequest = 60,
+                Text = "Insert!",
+                TextColor = Color.Red,
+            };
+            insertEntry = new Entry
+            {
+                WidthRequest = 60
+            };
+            layout.Children.Add(Insert);
+            Insert.Clicked += InsertClicked;
+            layout.Children.Add(insertEntry);
+
+            Content = layout;
         }
 
+
         //selectイベントハンドラ
-        void SelectClicked(object sender, EventArgs e)
+       /* void SelectClicked(object sender, EventArgs e)
         {
 
             //Userテーブルの行データを取得
@@ -98,7 +125,7 @@ namespace SQLite11
             {
                 //Userテーブルの名前列をLabelに書き出す
                 layout.Children.Add(new Label { Text = user.Name });
-            }
+            }*/
             //selectする
            /* var Select = new Button
             {
@@ -109,7 +136,7 @@ namespace SQLite11
             layout.Children.Add(Select);
             Select.Clicked += SelectClicked;*/
             //insertする
-            var Insert = new Button
+           /* var Insert = new Button
             {
                 WidthRequest = 60,
                 Text = "Insert!",
@@ -146,4 +173,4 @@ namespace SQLite11
                 Content = scrollView;*/
         }
     }
-}
+
