@@ -80,7 +80,7 @@ namespace SQLite11
         //insertイベントハンドラ
         void InsertClicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new Noname());
             var InsertName = insertEntry.Text;
             //Userテーブルに適当なデータを追加する
             UserModel.insertUser(InsertName);
@@ -99,7 +99,7 @@ namespace SQLite11
             var Insert = new Button
             {
                 WidthRequest = 60,
-                Text = "Insert!",
+                Text = "保存",
                 TextColor = Color.Red,
             };
             insertEntry = new Entry
@@ -111,6 +111,8 @@ namespace SQLite11
             layout.Children.Add(insertEntry);
 
             Content = layout;
+
+
         }
 
 
