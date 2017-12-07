@@ -88,13 +88,13 @@ namespace SQLite11
        
 
                 //Userテーブルの行データを取得
-                var query = UserModel.selectUser(); //中身はSELECT * FROM [User]
+               /* var query = UserModel.selectUser(); //中身はSELECT * FROM [User]
                 var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
                 foreach (var user in query)
                 {
                     //Userテーブルの名前列をLabelに書き出す
                     layout.Children.Add(new Label { Text = user.Name });
-                }
+                }*/
 
             var Insert = new Button
             {
@@ -106,11 +106,11 @@ namespace SQLite11
             {
                 WidthRequest = 60
             };
-            layout.Children.Add(Insert);
+            /*layout.Children.Add(Insert);
             Insert.Clicked += InsertClicked;
             layout.Children.Add(insertEntry);
 
-            Content = layout;
+            Content = layout;*/
 
 
         }
