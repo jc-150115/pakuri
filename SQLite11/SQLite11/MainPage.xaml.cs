@@ -62,7 +62,15 @@ namespace SQLite11
             layout.Children.Add(Insert);
             Insert.Clicked += InsertClicked;
             layout.Children.Add(insertEntry);
-            
+
+            insertEntry = new Entry
+            {
+                WidthRequest = 60
+            };
+            layout.Children.Add(Insert);
+            Insert.Clicked += InsertClicked;
+            layout.Children.Add(insertEntry);
+
             //--------------------------------selectします------------------------------
             /*var Select = new Button
             {
@@ -80,21 +88,22 @@ namespace SQLite11
         //insertイベントハンドラ
         void InsertClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Noname());
+           
             var InsertName = insertEntry.Text;
             //Userテーブルに適当なデータを追加する
             UserModel.insertUser(InsertName);
+            Navigation.PushAsync(new Noname());
 
-       
 
-                //Userテーブルの行データを取得
-               /* var query = UserModel.selectUser(); //中身はSELECT * FROM [User]
-                var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
-                foreach (var user in query)
-                {
-                    //Userテーブルの名前列をLabelに書き出す
-                    layout.Children.Add(new Label { Text = user.Name });
-                }*/
+
+            //Userテーブルの行データを取得
+            /* var query = UserModel.selectUser(); //中身はSELECT * FROM [User]
+             var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
+             foreach (var user in query)
+             {
+                 //Userテーブルの名前列をLabelに書き出す
+                 layout.Children.Add(new Label { Text = user.Name });
+             }*/
 
             var Insert = new Button
             {
