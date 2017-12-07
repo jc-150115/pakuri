@@ -12,6 +12,8 @@ namespace SQLite11
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Noname : ContentPage
     {
+        private int deleteId;
+
        public Noname()
         {
             InitializeComponent();
@@ -22,6 +24,22 @@ namespace SQLite11
             {
                 //Userテーブルの名前列をLabelに書き出す
                 layout.Children.Add(new Label { Text = user.Name });
+            }
+
+            
+
+            var Delete = new Button
+            {
+                WidthRequest = 60,
+                Text = "削除",
+                TextColor = Color.Aqua,
+            };
+            layout.Children.Add(Delete);
+            Delete.Clicked += DeleteClicked;
+
+            void DeleteClicked(object sender, EventArgs e)
+            {
+                UserModel.deleteUser(1);
             }
 
             Content = layout;

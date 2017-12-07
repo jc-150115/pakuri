@@ -68,7 +68,28 @@ namespace SQLite11
                 }
             }
         }
-        
+
+        public static void deleteUser(int id)
+        {
+            //データベースに接続する
+            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
+            {
+                try
+                {
+                    //データベースにUserテーブルを作成する
+                    db.CreateTable<UserModel>();
+                    db.DropTable<UserModel>();
+
+                    db.Delete(id);
+                }
+                catch (Exception e)
+                {
+                    db.Rollback();
+                    System.Diagnostics.Debug.WriteLine(e);
+                }
+            }
+        }
+
 
         //Userテーブルの行データを取得します
         //--------------------------select文的なの--------------------------
